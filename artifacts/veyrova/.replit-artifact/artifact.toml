@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "Veyrova"
+description = "A responsive developer platform dashboard for signing in, organizing projects, and managing project records with Supabase."
+version = "1.0.0"
+id = "artifacts/veyrova"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23576
+
+[services.development]
+run = "pnpm --filter @workspace/veyrova run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/veyrova", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/veyrova/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23576"
+BASE_PATH = "/"
