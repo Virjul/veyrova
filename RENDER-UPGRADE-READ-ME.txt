@@ -1,0 +1,17 @@
+VEYROVA — RENDER SOURCE UPGRADE
+
+This is SOURCE CODE, not a built website. The repository UI includes Upload files, Upload folder, and JSON backup import/export.
+
+IMPORTANT: Uploading this ZIP to Render itself will not update the live site. Commit the extracted source files to the GitHub repository connected to Render (Virjul/veyrova), preserving folder paths. Render will then rebuild.
+
+Render Static Site settings:
+Root directory: [empty]
+Build command: pnpm install && BASE_PATH=/ PORT=3000 pnpm --filter @workspace/veyrova run build
+Publish directory: artifacts/veyrova/dist/public
+Environment variables: VITE_SUPABASE_URL and VITE_SUPABASE_PUBLISHABLE_KEY
+
+This package has not been rebuilt/tested in this environment. Live deployment is not automatically updated.
+
+Text uploads are limited to 1MB per file and 100 files per batch. Binary assets use a separate asset feature. Folder upload depends on browser support.
+
+Project Deploy functionality is NOT implemented in this ZIP; it requires secure hosting-provider integration.
