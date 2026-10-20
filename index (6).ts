@@ -1,8 +1,4 @@
-import { Router, type IRouter } from "express";
-import healthRouter from "./health";
-
-const router: IRouter = Router();
-
-router.use(healthRouter);
-
-export default router;
+export * from "./generated/api";
+export * from "./generated/api.schemas";
+export { setBaseUrl, setAuthTokenGetter } from "./custom-fetch";
+export type { AuthTokenGetter } from "./custom-fetch";
