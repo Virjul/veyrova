@@ -1,0 +1,10 @@
+{
+  "buildCommand": "BASE_PATH=/ PORT=3000 pnpm --filter @workspace/veyrova run build",
+  "outputDirectory": "artifacts/veyrova/dist/public",
+  "rewrites": [
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
