@@ -1,12 +1,11 @@
 {
-  "name": "@workspace/api-zod",
+  "name": "@workspace/api-spec",
   "version": "0.0.0",
   "private": true,
-  "type": "module",
-  "exports": {
-    ".": "./src/index.ts"
+  "scripts": {
+    "codegen": "orval --config ./orval.config.ts && pnpm -w run typecheck:libs"
   },
-  "dependencies": {
-    "zod": "catalog:"
+  "devDependencies": {
+    "orval": "^8.30.0"
   }
 }
